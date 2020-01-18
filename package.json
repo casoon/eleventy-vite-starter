@@ -1,0 +1,31 @@
+{
+  "name": "eleventy-starter",
+  "version": "0.1.0",
+  "description": "Static pages with eleventy",
+  "scripts": {
+    "build": "npx eleventy --config=.eleventy.js",
+    "watch": "npx eleventy --config=.eleventy.js --watch",
+    "serve": "npx eleventy --config=.eleventy.js --serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/casoon/eleventy-starter.git"
+  },
+  "author": {
+    "name": "Jörn Seidel",
+    "email": "joern.seidel@casoon.de",
+    "url": "https://www.casoon.de/"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.10.0",
+    "@11ty/eleventy-navigation": "^0.1.4",
+    "@11ty/eleventy-plugin-rss": "^1.0.7",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
+    "clean-css": "^4.2.1",
+    "html-minifier": "^4.0.0",
+    "luxon": "^1.21.3",
+    "markdown-it": "^10.0.0",
+    "markdown-it-anchor": "^5.2.5"
+  }
+}
