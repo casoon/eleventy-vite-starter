@@ -1,0 +1,16 @@
+---
+title: Posts
+summary: ''
+pagination:
+  data: collections.posts
+  size: 10
+permalink: /posts/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber }}/{% endif %}index.html
+---
+{% extends 'layouts/home.njk' %}
+
+{% block content %}
+  <div>
+    {% include "components/listing.njk" %}
+    {% include "components/pagination.njk" %}
+  </div>
+{% endblock %}

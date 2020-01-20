@@ -1,11 +1,10 @@
 {
   "name": "eleventy-starter",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Static pages with eleventy",
   "scripts": {
-    "build": "npx eleventy --config=.eleventy.js",
-    "watch": "npx eleventy --config=.eleventy.js --watch",
-    "serve": "npx eleventy --config=.eleventy.js --serve"
+    "build": "npx eleventy --config=config.js",
+    "start": "npx eleventy --config=config.js --serve --watch"
   },
   "repository": {
     "type": "git",
@@ -25,7 +24,10 @@
     "clean-css": "^4.2.1",
     "html-minifier": "^4.0.0",
     "luxon": "^1.21.3",
+    "common-tags": "^1.8.0",
     "markdown-it": "^10.0.0",
-    "markdown-it-anchor": "^5.2.5"
+    "markdown-it-anchor": "^5.2.5",
+    "ramda": "^0.26.1",
+    "terser": "^4.6.3"
   }
 }
