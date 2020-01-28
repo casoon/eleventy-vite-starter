@@ -1,7 +1,7 @@
 <ul>
-  {% for entry in pagination.items %}
+  {% for item in pagination.items %}
   <li>
-    {% include "components/entry.njk" %}
+    <a href="{{ item.url }}">{{ item.data.title }}</a>
   </li>
   {% endfor %}
 </ul>

@@ -15,7 +15,43 @@
 	============================================= -->
     <title>{{ renderData.title or title or metadata.title }}</title>
     <meta name="Description" content="{{ renderData.description or description or metadata.description }}">
-    <meta name="author" content=""> 
+    <meta name="robots" content="index,follow">
+    <meta name="generator" content="Eleventy">
+
+    {% if site.icon %}
+        <link rel="shortcut icon" type="image/png" href="{{ site.icon }}"/>
+    {% endif %}
+
+    {%- block seo -%}
+        <!--Twitter Card-->
+        <meta name="twitter:site" content="{{ site.twitter }}">
+        <meta name="twitter:creator" content="{{ site.twitter }}">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:url" content="{{ site.url + page.url }}">
+        <meta name="twitter:title" content="{{ title + " – " + site.title if title else title }}">
+        <meta name="twitter:description" content="{{ site.description }}">
+        <meta name="twitter:image" content="{{ site.cover_image }}">
+
+        <!--Schema-->
+        <link rel="author" href="{{ site.url }}">
+        <link rel="publisher" href="{{ site.url }}">
+        <meta itemprop="name" content="{{ title + " – " + site.title if title else title }}">
+        <meta itemprop="description" content="{{ site.description }}">
+        <meta itemprop="image" content="{{ site.cover_image }}">
+
+        <!-- Facebook OpenGraph -->
+        <meta property="og:url" content="{{site.url + page.url}}">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="{{ title + " – " + site.title if title else title }}">
+        <meta property="og:image" content="{{ site.cover_image }}">
+        <meta property="og:description" content="{{ site.description }}">
+        <meta property="og:site_name" content="{{ site.title }}">
+        <meta property="og:locale" content="{{ site.lang }}">
+        <meta property="article:author" content="{{ site.url }}">
+    {%- endblock -%}
+
+    {{ site.codeinjection_head | safe if site.codeinjection_head }}
+    {{ codeinjection_head | safe if codeinjection_head }}
 
 </head>
 
@@ -28,6 +64,9 @@
     </main>
 
     {% include "components/footer.njk" %}
+
+    {{ site.codeinjection_foot | safe if site.codeinjection_foot }}
+    {{ codeinjection_foot | safe if codeinjection_foot }}
 
 </body>
 </html>
