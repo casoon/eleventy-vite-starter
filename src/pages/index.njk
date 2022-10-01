@@ -1,0 +1,50 @@
+---
+layout: default
+title: "Homepage"
+description: "This is a Homepage"
+permalink: /index.html
+eleventyNavigation:
+  key: Home
+  order: 1
+  title: "Nav 1"
+---
+123
+{% block content %}
+
+    <div class="container py-2">
+        <div class="row">
+            <div class="col">
+                <h2>Bootstrap 5 <span class="text-capitalize" id="darkTheme">dark</span> Theme</h2>
+                <button class="btn btn-primary">Primary</button>
+                <button class="btn btn-secondary">Secondary</button>
+                <button class="btn btn-info">Info</button>
+                <button class="btn btn-success">Success</button>
+                <button class="btn btn-danger">Danger</button>
+                <button class="btn btn-dark">Dark</button>
+                <button class="btn btn-light">Light</button>
+                <span style="color: var(--bs-success)">--bs-success text</span>
+                <p> plain text </p>
+                <div class="bg-light p-3 text-dark">bg-light</div>
+                <div class="bg-primary p-3 text-light">bg-primary</div>
+            </div>
+            <div class="col-auto">
+                <button class="btn btn-primary" id="btnSwitch">Switch</button>
+            </div>
+        </div>
+    </div>
+1234
+<script>
+    document.getElementById('btnSwitch').addEventListener('click',()=>{
+        if (document.body.classList.contains('dark')) {
+            document.body.classList.remove('dark')
+        }
+        else {
+            document.body.classList.add('dark')
+        }
+        document.getElementById('darkTheme').innerText = document.body.classList
+    })
+</script>
+
+{% endblock %}
+
+

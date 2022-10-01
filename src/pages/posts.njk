@@ -1,4 +1,5 @@
 ---
+layout: default
 title: Posts
 summary: ''
 pagination:
@@ -6,7 +7,6 @@ pagination:
   size: 10
 permalink: /posts/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber }}/{% endif %}index.html
 ---
-{% extends 'layouts/home.njk' %}
 
 {% block content %}
   <div>

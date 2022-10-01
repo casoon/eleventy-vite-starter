@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="de">
+{% include "components/head.njk" %}
+<body>
+    {% include "components/header.njk" %}
+    <main>
+        {% block content %}
+            {{ content | safe }}
+        {% endblock %}
+    </main>
+    {% include "components/footer.njk" %}
+</body>
+</html>
+

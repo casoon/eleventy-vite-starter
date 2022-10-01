@@ -1,0 +1,51 @@
+@import "../fonts/source-sans-pro.css";
+
+@import "../../../../node_modules/bootstrap/scss/mixins";
+
+// Font Variables
+$font-family-base: "Source Sans Pro", sans-serif;
+$font-size-base: 0.85rem;
+$headings-font-weight: 600;
+
+// Font Specific Settings
+* {
+    word-spacing: normal !important;
+}
+body {
+    font-family: $font-family-base;
+    font-size: $font-size-base;
+}
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6,
+.nav-link,
+.btn {
+    font-weight: $headings-font-weight;
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6,
+.btn,
+.nav-link {
+    letter-spacing: normal;
+}
+.btn,
+.nav-link{
+    @include font-size($font-size-base);
+}
+
+.h1, h1 {
+    @include font-size(1.5rem);
+}
+.h2, h2 {
+    @include font-size(1.35rem);
+}
+.h3, h3 {
+    @include font-size(1.15rem);
+}
+.h4, h4 {
+    @include font-size(1rem);
+}
+.h5, h5 {
+    @include font-size(0.95rem);
+}
+.h6, h6 {
+    @include font-size(0.9rem);
+}

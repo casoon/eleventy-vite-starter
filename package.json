@@ -1,45 +1,70 @@
 {
   "name": "eleventy-starter",
-  "version": "0.3.0",
-  "description": "Static pages with eleventy",
-  "scripts": {
-    "build": "npx eleventy --config=config/eleventy.js",
-    "start": "npx eleventy --config=config/eleventy.js --serve --watch",
-    "lint": "eslint . --ext .js --cache"
-  },
+  "version": "0.4.0",
+  "private": true,
+  "description": "Static pages with Eleventy 2",
+  "keywords": [
+    "eleventy",
+    "jamstack",
+    "alpinejs",
+    "vite"
+  ],
   "repository": {
     "type": "git",
     "url": "git://github.com/casoon/eleventy-starter.git"
   },
+  "license": "MIT",
   "author": {
     "name": "Jörn Seidel",
     "email": "joern.seidel@casoon.de",
     "url": "https://www.casoon.de/"
   },
-  "license": "MIT",
+  "main": "_site/index.html",
+  "scripts": {
+    "build": "cross-env NODE_ENV=production && run-s build:*",
+    "build:eleventy": "npx @11ty/eleventy",
+    "check-links": "npx check-html-links _site",
+    "dev": "cross-env NODE_ENV=development && run-p dev:*",
+    "dev:eleventy": "npx @11ty/eleventy --serve --watch",
+    "lint": "eslint . --ext .js --cache",
+    "format": "prettier --write '**/*.{js,css,html,md}'"
+  },
   "dependencies": {
-    "@11ty/eleventy": "^0.10.0",
-    "@11ty/eleventy-navigation": "^0.1.4",
-    "@11ty/eleventy-plugin-rss": "^1.0.7",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
-    "eleventy-plugin-lazyimages": "^1.0.3",
-    "eleventy-plugin-local-images": "^0.3.0",
-    "@tryghost/content-api": "^1.2.5",
-    "@tryghost/helpers": "^1.1.6",
-    "cross-env": "^7.0.0",
-    "dotenv": "^8.2.0",
-    "clean-css": "^4.2.1",
-    "html-minifier": "^4.0.0",
-    "luxon": "^1.21.3",
-    "common-tags": "^1.8.0",
-    "markdown-it": "^10.0.0",
-    "markdown-it-anchor": "^5.2.5",
-    "ramda": "^0.26.1",
-    "terser": "^4.6.3",
-    "eslint-utils": "2.0.0"
+    "@11ty/is-land": "^2.0.3",
+    "@popperjs/core": "^2.11.6",
+    "alpinejs": "^3.0.1",
+    "bootstrap": "^5.2.0",
+    "core-js": "^3.20.2",
+    "speedlify-score": "^2.0.2"
   },
   "devDependencies": {
+    "@11ty/eleventy": "^2.0.0-canary.16",
+    "@11ty/eleventy-img": "^2.0.1",
+    "@11ty/eleventy-navigation": "^0.3.5",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^4.1.0",
+    "@11ty/eleventy-plugin-vite": "^2.0.0-canary.2",
+    "clean-css": "^4.2.1",
+    "common-tags": "^1.8.0",
+    "cross-env": "^7.0.0",
+    "dotenv": "^8.2.0",
     "eslint": "^6.8.0",
-    "eslint-plugin-ghost": "^1.0.0"
+    "eslint-utils": "2.0.0",
+    "html-minifier": "^4.0.0",
+    "html-validate": "^5.2.1",
+    "luxon": "^1.21.3",
+    "markdown-it": "^10.0.0",
+    "markdown-it-anchor": "^5.2.5",
+    "npm-run-all": "4.1.5",
+    "path": "^0.12.7",
+    "prettier": "^2.7.1",
+    "ramda": "^0.26.1",
+    "remove": "^0.1.5",
+    "sass": "^1.54.8",
+    "slugify": "^1.6.5",
+    "terser": "^4.6.3"
+  },
+  "engines": {
+    "node": ">=16.x.x",
+    "npm": ">=8.x.x"
   }
 }
